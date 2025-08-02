@@ -1,5 +1,6 @@
-# EDIT SETTINGSA
-/etc/tightvncserver.conf
+# EDIT SETTINGS
+/etc/tightvncserver.conf   
+
 /etc/tigervnc/vncserver-config-mandatory
 
 # startvnc
