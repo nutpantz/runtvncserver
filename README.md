@@ -1,30 +1,30 @@
 # INSTALL  
-sudo apt-get update
+sudo apt-get update  
 
-sudo apt-get install tigervnc-scraping-server
+sudo apt-get install tigervnc-scraping-server  
 
-mkdir -p ~/.vnc
+mkdir -p ~/.vnc  
 
-user@hostname:~$ vncpasswd
-Password:
-Verify:
-Would you like to enter a view-only password (y/n)? n
+user@hostname:~$ vncpasswd  
+Password:  
+Verify:  
+Would you like to enter a view-only password (y/n)? n  
 
-run it
-x0vncserver -passwordfile ~/.vnc/passwd -display :0
+run it------  
+x0vncserver -passwordfile ~/.vnc/passwd -display :0  
 
-find it
-ps -fu user | grep [x]0vncserver
+find it--------  
+ps -fu user | grep [x]0vncserver  
 
-kill it
-x0vncserver -kill :0
+kill it------  
+x0vncserver -kill :0  
 
-# EDIT SETTINGS
-local host is on by default 
-/etc/tightvncserver.conf   
+# EDIT SETTINGS  
+local host is on by default   
+/etc/tightvncserver.conf     
 
-/etc/tigervnc/vncserver-config-mandatory
-
+/etc/tigervnc/vncserver-config-mandatory  
+  
 # startvnc
 Shell script to run TigerVNC server on the actual desktop (scraping).
 
