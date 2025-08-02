@@ -87,7 +87,7 @@ case "$1" in
             echo -e "VNC Server is running (pid: ${VAR})"
 	    echo
         else
-            ${VNCSERVER} -Geometry ${GEOMETRY} -localhost=0 -interface 192.168.0.130 -display ${DISPLAY} -passwordfile ${PASSWDFILE} -rfbport ${VNCPORT} >> ${LOGFILE} 2>&1 &
+            ${VNCSERVER} -Geometry ${GEOMETRY} -localhost=0 -interface ${INTERFACE} -display ${DISPLAY} -passwordfile ${PASSWDFILE} -rfbport ${VNCPORT} >> ${LOGFILE} 2>&1 &
 	    if [ $? -eq 0 ]
 	    then
             	fn_pid
