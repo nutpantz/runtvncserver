@@ -2,10 +2,10 @@
 # title             :startvnc
 # description       :This script was written for the debian package tigervnc-scraping-server, in order to log in to the actual X session on display :0
 # author            :Istvan Sebestyen-Teleki
-# date              :2018.10.06.
-# version           :0.3
+# date              :2025
+# version           :0.5
 # usage             :bash startvnc
-# notes             :install tigervnc-scraping-server (debian stretch)
+# notes             :install tigervnc-scraping-server (debian 12-13)
 
 # What's the script name
 SCRIPTNAME="startvnc"
