@@ -1,3 +1,7 @@
+# EDIT SETTINGSA
+/etc/tightvncserver.conf
+/etc/tigervnc/vncserver-config-mandatory
+
 # startvnc
 Shell script to run TigerVNC server on the actual desktop (scraping).
 
