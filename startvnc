@@ -25,6 +25,9 @@ LOGFILE="${VNCDIR}/logfile"
 # The vnc passwd file. If it doesn't exist, you need to create it
 PASSWDFILE="${VNCDIR}/passwd"
 
+# What's the Geometry  -Geometry 1280x720
+GEOMETRY="1280x720"
+
 # Leave this on ":0", since we want to log in to the actual session
 DISPLAY=":0"
 
@@ -81,7 +84,7 @@ case "$1" in
             echo -e "VNC Server is running (pid: ${VAR})"
 	    echo
         else
-            ${VNCSERVER} -display ${DISPLAY} -passwordfile ${PASSWDFILE} -rfbport ${VNCPORT} >> ${LOGFILE} 2>&1 &
+            ${VNCSERVER} -Geometry ${GEOMETRY} -display ${DISPLAY} -passwordfile ${PASSWDFILE} -rfbport ${VNCPORT} >> ${LOGFILE} 2>&1 &
 	    if [ $? -eq 0 ]
 	    then
             	fn_pid
