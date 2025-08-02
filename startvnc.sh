@@ -16,6 +16,9 @@ VNCSERVER="/usr/bin/x0vncserver"
 # Set home directory
 HOMEDIR=${HOME}
 
+# Set home ip
+INTERFACE=${192.168.0.120}
+
 # Default VNC User directory
 VNCDIR="${HOMEDIR}/.vnc"
 
