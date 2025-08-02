@@ -1,7 +1,6 @@
 #!/bin/bash
 # title             :startvnc
 # description       :This script was written for the debian package tigervnc-scraping-server, in order to log in to the actual X session on display :0
-# author            :Istvan Sebestyen-Teleki
 # date              :2025
 # version           :0.5
 # usage             :bash startvnc
