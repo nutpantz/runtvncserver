@@ -1,10 +1,10 @@
 #!/bin/bash
 # title             :startvnc
 # description       :This script was written for the debian package tigervnc-scraping-server, in order to log in to the actual X session on display :0
-# date              :2025
-# version           :0.5
+# date              :2025-8
+# version           :0.4
 # usage             :bash startvnc
-# notes             :install tigervnc-scraping-server (debian 12-13)
+# notes             :install tigervnc-scraping-server (debian 13)
 
 # What's the script name
 SCRIPTNAME="startvnc"
@@ -16,7 +16,7 @@ VNCSERVER="/usr/bin/x0vncserver"
 HOMEDIR=${HOME}
 
 # Set home ip
-INTERFACE=${192.168.0.120}
+INTERFACE=192.168.0.120
 
 # Default VNC User directory
 VNCDIR="${HOMEDIR}/.vnc"
@@ -28,7 +28,7 @@ LOGFILE="${VNCDIR}/logfile"
 PASSWDFILE="${VNCDIR}/passwd"
 
 # What's the Geometry  -Geometry 1280x720
-GEOMETRY="1280x720"
+GEOMETRY="1920x1080"
 
 # Leave this on ":0", since we want to log in to the actual session
 DISPLAY=":0"
@@ -86,7 +86,7 @@ case "$1" in
             echo -e "VNC Server is running (pid: ${VAR})"
 	    echo
         else
-            ${VNCSERVER} -Geometry ${GEOMETRY} -localhost=0 -interface ${INTERFACE} -display ${DISPLAY} -passwordfile ${PASSWDFILE} -rfbport ${VNCPORT} >> ${LOGFILE} 2>&1 &
+            ${VNCSERVER} -Geometry ${GEOMETRY} -localhost=0 -interface 192.168.0.130 -display ${DISPLAY} -passwordfile ${PASSWDFILE} -rfbport ${VNCPORT} >> ${LOGFILE} 2>&1 &
 	    if [ $? -eq 0 ]
 	    then
             	fn_pid
@@ -108,6 +108,7 @@ case "$1" in
         fn_pid
         if [ $? -eq 0 ]
         then
+        x0vncserver -kill :0
             kill -9 ${VAR}
 
             if [ $? -eq 0 ]
@@ -149,8 +150,9 @@ case "$1" in
         fn_pid
         if [ $? -eq 0 ]
         then
+        x0vncserver -kill :0
             kill -9 ${VAR}
-	    x0vncserver -kill :0
+         
             echo -ne ${OK}
             echo -e " (pid: ${VAR})"
 	    echo
